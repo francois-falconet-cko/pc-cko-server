@@ -154,8 +154,8 @@ exports.createPaymentSession = async (req, res) => {
 			name: req.body.name,
 			email: req.body.email
 			},
-			success_url: "https://example.com/payments/success",
-			failure_url: "https://example.com/payments/failure"
+			success_url: req.body.success_url,
+			failure_url: req.body.failure_url
 		};
 		
 		if(req.body.securePayment == 'true') {
