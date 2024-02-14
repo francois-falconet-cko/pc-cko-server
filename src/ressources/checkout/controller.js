@@ -146,9 +146,9 @@ exports.createPaymentSession = async (req, res) => {
 			currency: req.body.currency,
 			reference: req.body.reference,
 			billing: {
-			address: {
-				country: req.body.country
-			}
+				address: {
+					country: req.body.country
+				}
 			},
 			customer: {
 			name: req.body.name,
@@ -171,7 +171,7 @@ exports.createPaymentSession = async (req, res) => {
 
 
 	} catch (error) {
-		console.log(error);
+		console.log(error?.response?.data);
 		return res.status(500).send(error);
 	}
 };
